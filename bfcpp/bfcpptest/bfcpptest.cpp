@@ -502,7 +502,7 @@ void takerBuySellVolume(const ApiAccess& access)
 		ss << "\n{";
 
 		std::for_each(std::begin(entry), std::end(entry), [&ss](auto& values) { ss << "\n\t" << values.first << "=" << values.second;  });
-		redis->publish("REDIS_LOGS_CHANNEL",  "HERE_IS_THE_RATIO_DATA_" + ss);
+		redis->publish("REDIS_LOGS_CHANNEL",  "HERE_IS_THE_RATIO_DATA_" + ss.str());
 
 		ss << "\n}";
 	}
